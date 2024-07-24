@@ -11,6 +11,9 @@ module.exports = app;
  */
 const PORT = process.env.PORT || 4001;
 
+// middleware for public files
+app.use(express.static(__dirname));
+
 // middleware for logging
 app.use(morgan("dev"));
 
@@ -20,7 +23,7 @@ app.use(cors());
 // middware for parsing request bodies
 app.use(bodyParser.json());
 
-// Mount your existing apiRouter below at the '/api' path.
+// Routers
 const apiRouter = require("./server/api");
 app.use("/api", apiRouter);
 
