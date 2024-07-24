@@ -4,12 +4,7 @@
 
 In this project, you will create an entire API to serve information to a Boss Machine, a unique management application for today's most accomplished (evil) entrepreneurs. You will create routes to manage your 'minions', your brilliant 'million dollar ideas', and to handle all the annoying meetings that keep getting added to your busy schedule.
 
-You can view a video demonstration of the final app here:
-
-<video width="100%" height="100%" controls>
-   <source src="https://s3.amazonaws.com/codecademy-content/programs/build-apis/solution-videos/BossMachine480.mov" type="video/mp4">
- The markdown processor does not support the video tag.
-</video>
+You can view a video demonstration of the final app [here](https://s3.amazonaws.com/codecademy-content/programs/build-apis/solution-videos/BossMachine480.mov)
 
 ## How to Begin
 
@@ -21,7 +16,8 @@ Once you have the project downloaded, you'll need to run some terminal commands 
 
 ### _\*Maria's notes:_
 
-_had to run `npm install --legacy-peer-deps` to handle outdated dependency resolution!_
+- _had to run `npm install --legacy-peer-deps` to handle outdated dependency resolution!_
+- _shared some more feedback about getting this project running on the codecademy forum [here](https://discuss.codecademy.com/t/tips-for-the-boss-machine-project-express-js-installation-start-local-server-access-index-html-and-using-postman-to-test-all-the-routes/746940/10?u=surfineer)_
 
 ---
 
