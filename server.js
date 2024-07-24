@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const morgan = require("morgan");
+const fs = require("fs");
 
 module.exports = app;
 
@@ -11,8 +12,8 @@ module.exports = app;
  */
 const PORT = process.env.PORT || 4001;
 
-// middleware for public files
-app.use(express.static(__dirname));
+// prefix for static files
+app.use("/public", express.static("./public"));
 
 // middleware for logging
 app.use(morgan("dev"));
@@ -23,12 +24,18 @@ app.use(cors());
 // middware for parsing request bodies
 app.use(bodyParser.json());
 
+// route the root URL to index.html
+app.get("/", (_req, res) => {
+  const index = fs.readFileSync("index.html", "utf8");
+  res.send(index);
+});
+
 // Routers
 const apiRouter = require("./server/api");
 app.use("/api", apiRouter);
 
 // error handling and 404 page display
-app.use((req, res) => {
+app.use((_req, res) => {
   res.status(404).send("Not a valid URL!");
 });
 
