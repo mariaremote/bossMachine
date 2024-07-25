@@ -49,18 +49,18 @@ Take note of the comments in **server.js**, as your code needs to fit into speci
   - [x] GET /api/minions to get an array of all minions.
   - [x] POST /api/minions to create a new minion and save it to the database.
   - [x] GET /api/minions/:minionId to get a single minion by id.
-  - [ ] PUT /api/minions/:minionId to update a single minion by id.
-  - [ ] DELETE /api/minions/:minionId to delete a single minion by id.
+  - [x] PUT /api/minions/:minionId to update a single minion by id.
+  - [x] DELETE /api/minions/:minionId to delete a single minion by id.
 - `/api/ideas`
   - [x] GET /api/ideas to get an array of all ideas.
-  - [ ] POST /api/ideas to create a new idea and save it to the database.
+  - [x] POST /api/ideas to create a new idea and save it to the database.
   - [x] GET /api/ideas/:ideaId to get a single idea by id.
-  - [ ] PUT /api/ideas/:ideaId to update a single idea by id.
-  - [ ] DELETE /api/ideas/:ideaId to delete a single idea by id.
+  - [x] PUT /api/ideas/:ideaId to update a single idea by id.
+  - [x] DELETE /api/ideas/:ideaId to delete a single idea by id.
 - `/api/meetings`
   - [x] GET /api/meetings to get an array of all meetings.
   - [x] POST /api/meetings to create a new meeting and save it to the database.
-  - [ ] DELETE /api/meetings to delete _all_ meetings from the database.
+  - [x] DELETE /api/meetings to delete _all_ meetings from the database.
 
 For all `/api/minions` and `/api/ideas routes`, any POST or PUT requests will send their new/updated resources in the request body. POST request bodies will not have an `id` property, you will have to set it based on the next id in sequence.
 
@@ -134,10 +134,10 @@ Schema:
 
 Routes required:
 
-- GET /api/minions/:minionId/work to get an array of all work for the specified minon.
-- POST /api/minions/:minionId/work to create a new work object and save it to the database.
-- PUT /api/minions/:minionId/work/:workId to update a single work by id.
-- DELETE /api/minions/:minionId/work/:workId to delete a single work by id.
+-[] GET /api/minions/:minionId/work to get an array of all work for the specified minon.
+-[] POST /api/minions/:minionId/work to create a new work object and save it to the database.
+-[] PUT /api/minions/:minionId/work/:workId to update a single work by id.
+-[] DELETE /api/minions/:minionId/work/:workId to delete a single work by id.
 
 To work on the bonus with tests, you will need to remove their pending status. Open the **test/test.js** and edit that begins the /api/minions/:minionId/work routes tests. It should start with `xdescribe(` around line 689 of the test file. If you delete the `x` (so that the line simply starts with `describe(` and save the test file before re-running, your bonus tests will now be active.
 
