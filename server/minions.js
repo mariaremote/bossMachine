@@ -10,7 +10,7 @@ const {
 
 minionsRouter.param("minionId", getCorrectParam("minionId", "minions"));
 
-minionsRouter.get("/", (req, res) => {
+minionsRouter.get("/", (_req, res) => {
   res.send(getAllFromDatabase("minions"));
 });
 minionsRouter.get("/:minionId", (req, res) => {

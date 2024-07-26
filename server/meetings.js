@@ -10,7 +10,7 @@ const {
 
 meetingsRouter.param("meetingId", getCorrectParam("meetingId", "meetings"));
 
-meetingsRouter.get("/", (req, res) => {
+meetingsRouter.get("/", (_req, res) => {
   res.send(getAllFromDatabase("meetings"));
 });
 
@@ -18,7 +18,7 @@ meetingsRouter.get("/:meetingId", (req, res) => {
   res.send(getFromDatabaseById("meetings", req.meetingId));
 });
 
-meetingsRouter.post("/", (req, res) => {
+meetingsRouter.post("/", (_req, res) => {
   const newMeeting = addToDatabase("meetings", createMeeting());
   res.status(201).send(newMeeting);
 });

@@ -134,10 +134,10 @@ Schema:
 
 Routes required:
 
--[] GET /api/minions/:minionId/work to get an array of all work for the specified minon.
--[] POST /api/minions/:minionId/work to create a new work object and save it to the database.
--[] PUT /api/minions/:minionId/work/:workId to update a single work by id.
--[] DELETE /api/minions/:minionId/work/:workId to delete a single work by id.
+- [] GET /api/minions/:minionId/work to get an array of all work for the specified minon.
+- [] POST /api/minions/:minionId/work to create a new work object and save it to the database.
+- [] PUT /api/minions/:minionId/work/:workId to update a single work by id.
+- [] DELETE /api/minions/:minionId/work/:workId to delete a single work by id.
 
 To work on the bonus with tests, you will need to remove their pending status. Open the **test/test.js** and edit that begins the /api/minions/:minionId/work routes tests. It should start with `xdescribe(` around line 689 of the test file. If you delete the `x` (so that the line simply starts with `describe(` and save the test file before re-running, your bonus tests will now be active.
 

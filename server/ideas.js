@@ -7,19 +7,19 @@ const {
   deleteFromDatabasebyId,
   updateInstanceInDatabase,
 } = require("./db.js");
+const checkMillionDollarIdea = require("./checkMillionDollarIdea.js");
 
 ideasRouter.param("ideaId", getCorrectParam("ideaId", "ideas"));
 
-ideasRouter.get("/", (req, res) => {
+ideasRouter.get("/", (_req, res) => {
   res.send(getAllFromDatabase("ideas"));
 });
 ideasRouter.get("/:ideaId", (req, res) => {
   res.send(getFromDatabaseById("ideas", req.ideaId));
 });
 
-ideasRouter.post("/", (req, res) => {
-  const newIdea = addToDatabase("ideas", req.body);
-  console.log(req.body);
+ideasRouter.post("/", checkMillionDollarIdea, (req, res) => {
+  const newIdea = req.body;
   /*
   {
   name: 'New Idea',
@@ -29,6 +29,7 @@ ideasRouter.post("/", (req, res) => {
   id: '11'
   }
   */
+  addToDatabase("ideas", req.body);
   res.status(201).send(newIdea);
 });
 
