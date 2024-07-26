@@ -4,22 +4,18 @@
 
 In this project, you will create an entire API to serve information to a Boss Machine, a unique management application for today's most accomplished (evil) entrepreneurs. You will create routes to manage your 'minions', your brilliant 'million dollar ideas', and to handle all the annoying meetings that keep getting added to your busy schedule.
 
-You can view a video demonstration of the final app [here](https://s3.amazonaws.com/codecademy-content/programs/build-apis/solution-videos/BossMachine480.mov)
+You can view a video demonstration of the final app here:
+
+<video width="100%" height="100%" controls>
+   <source src="https://s3.amazonaws.com/codecademy-content/programs/build-apis/solution-videos/BossMachine480.mov" type="video/mp4">
+ The markdown processor does not support the video tag.
+</video>
 
 ## How to Begin
 
 To start, download the starting code for this project <a href="https://s3.amazonaws.com/codecademy-content/PRO/skill-paths/backend-javascript/projects/boss-machine/project-4-boss-machine-start.zip" target="_blank">here</a>. After downloading the zip folder, double click it to uncompress it and access the contents.
 
-Once you have the project downloaded, you'll need to run some terminal commands to get the application started. First, open the root project directory in your terminal. Run `npm install`\* to install the dependencies of this project and build the front-end application. Once it has finished installing, you can run `npm run start` to begin your server. You'll see `Server listening on port 4001` in the terminal. The `npm run start` script will automatically restart your server whenever you make changes to the **server.js** file or **server/** folder. If you want to turn this off, simply start your server with the `node server.js` command. You can kill either process with the `Ctrl + C` command.
-
----
-
-### _\*Maria's notes:_
-
-- _had to run `npm install --legacy-peer-deps` to handle outdated dependency resolution!_
-- _shared some more feedback about getting this project running on the codecademy forum [here](https://discuss.codecademy.com/t/tips-for-the-boss-machine-project-express-js-installation-start-local-server-access-index-html-and-using-postman-to-test-all-the-routes/746940/10?u=surfineer)_
-
----
+Once you have the project downloaded, you'll need to run some terminal commands to get the application started. First, open the root project directory in your terminal. Run `npm install` to install the dependencies of this project and build the front-end application. Once it has finished installing, you can run `npm run start` to begin your server. You'll see `Server listening on port 4001` in the terminal. The `npm run start` script will automatically restart your server whenever you make changes to the **server.js** file or **server/** folder. If you want to turn this off, simply start your server with the `node server.js` command. You can kill either process with the `Ctrl + C` command.
 
 To see the application in its initial, non-working state, simply open **index.html** in a web browser. You should use [Google Chrome](https://www.google.com/chrome/browser/desktop/index.html) (at least version 60) or [Firefox](https://www.mozilla.org/en-US/firefox/new/) (at least version 55). The links above will let you download the latest release of either browser if you do not have it or are unsure of which version you're running.
 
@@ -46,21 +42,21 @@ Take note of the comments in **server.js**, as your code needs to fit into speci
 #### Routes Required
 
 - `/api/minions`
-  - [x] GET /api/minions to get an array of all minions.
-  - [x] POST /api/minions to create a new minion and save it to the database.
-  - [x] GET /api/minions/:minionId to get a single minion by id.
-  - [x] PUT /api/minions/:minionId to update a single minion by id.
-  - [x] DELETE /api/minions/:minionId to delete a single minion by id.
+  - GET /api/minions to get an array of all minions.
+  - POST /api/minions to create a new minion and save it to the database.
+  - GET /api/minions/:minionId to get a single minion by id.
+  - PUT /api/minions/:minionId to update a single minion by id.
+  - DELETE /api/minions/:minionId to delete a single minion by id.
 - `/api/ideas`
-  - [x] GET /api/ideas to get an array of all ideas.
-  - [x] POST /api/ideas to create a new idea and save it to the database.
-  - [x] GET /api/ideas/:ideaId to get a single idea by id.
-  - [x] PUT /api/ideas/:ideaId to update a single idea by id.
-  - [x] DELETE /api/ideas/:ideaId to delete a single idea by id.
+  - GET /api/ideas to get an array of all ideas.
+  - POST /api/ideas to create a new idea and save it to the database.
+  - GET /api/ideas/:ideaId to get a single idea by id.
+  - PUT /api/ideas/:ideaId to update a single idea by id.
+  - DELETE /api/ideas/:ideaId to delete a single idea by id.
 - `/api/meetings`
-  - [x] GET /api/meetings to get an array of all meetings.
-  - [x] POST /api/meetings to create a new meeting and save it to the database.
-  - [x] DELETE /api/meetings to delete _all_ meetings from the database.
+  - GET /api/meetings to get an array of all meetings.
+  - POST /api/meetings to create a new meeting and save it to the database.
+  - DELETE /api/meetings to delete _all_ meetings from the database.
 
 For all `/api/minions` and `/api/ideas routes`, any POST or PUT requests will send their new/updated resources in the request body. POST request bodies will not have an `id` property, you will have to set it based on the next id in sequence.
 
@@ -76,7 +72,7 @@ The **server/db.js** file exports helper functions for working with the database
 
 `getFromDatabaseById`:
 
-- Takes the model name argument and a second string argument representing the unique ID of the element. Returns the instance with valid inputs and `null` with an invalid id.
+- Takes the model name argument and a second string argument representing the unique ID of the element. Returns the instance with valid inputs and `-1` with an invalid id.
 
 `addToDatabase`:
 
@@ -117,7 +113,7 @@ Take note that many values that could be numbers are in fact strings. Since we a
 
 ### Custom Middleware
 
-- [x] You will create a custom middleware function `checkMillionDollarIdea` that will come in handy in some /api/ideas routes. Write this function in the **server/checkMillionDollarIdea.js** file. This function will make sure that any new or updated ideas are still worth at least one million dollars! The total value of an idea is the product of its `numWeeks` and `weeklyRevenue` properties.
+- You will create a custom middleware function `checkMillionDollarIdea` that will come in handy in some /api/ideas routes. Write this function in the **server/checkMillionDollarIdea.js** file. This function will make sure that any new or updated ideas are still worth at least one million dollars! The total value of an idea is the product of its `numWeeks` and `weeklyRevenue` properties.
 
 ### Bonus
 
@@ -134,12 +130,12 @@ Schema:
 
 Routes required:
 
-- [ ] GET /api/minions/:minionId/work to get an array of all work for the specified minon.
-- [ ] POST /api/minions/:minionId/work to create a new work object and save it to the database.
-- [ ] PUT /api/minions/:minionId/work/:workId to update a single work by id.
-- [ ] DELETE /api/minions/:minionId/work/:workId to delete a single work by id.
+- GET /api/minions/:minionId/work to get an array of all work for the specified minon.
+- POST /api/minions/:minionId/work to create a new work object and save it to the database.
+- PUT /api/minions/:minionId/work/:workId to update a single work by id.
+- DELETE /api/minions/:minionId/work/:workId to delete a single work by id.
 
-To work on the bonus with tests, you will need to remove their pending status. Open the **test/test.js** and edit what begins the /api/minions/:minionId/work routes tests. It should start with `xdescribe(` around line 619 of the test file. If you delete the `x` so that the line simply starts with `describe(` and save the test file before re-running, your bonus tests will now be active.
+To work on the bonus with tests, you will need to remove their pending status. Open the **test/test.js** and edit that begins the /api/minions/:minionId/work routes tests. It should start with `xdescribe(` around line 689 of the test file. If you delete the `x` (so that the line simply starts with `describe(` and save the test file before re-running, your bonus tests will now be active.
 
 In order to fully implement these routes, the database helper functions may not provide all the functionality that you need, and you may need to use router parameters or other methods to attach the `minionId` properties correctly and handle the edge cases property. Good luck!
 

@@ -33,7 +33,7 @@ ideasRouter.post("/", checkMillionDollarIdea, (req, res) => {
   res.status(201).send(newIdea);
 });
 
-ideasRouter.put("/:ideaId", (req, res) => {
+ideasRouter.put("/:ideaId", checkMillionDollarIdea, (req, res) => {
   updateInstanceInDatabase("ideas", req.body);
   res.status(200).send(req.body);
 });
