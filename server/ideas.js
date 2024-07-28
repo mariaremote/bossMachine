@@ -20,15 +20,6 @@ ideasRouter.get("/:ideaId", (req, res) => {
 
 ideasRouter.post("/", checkMillionDollarIdea, (req, res) => {
   const newIdea = req.body;
-  /*
-  {
-  name: 'New Idea',
-  description: 'Help Bob',
-  weeklyRevenue: 56789,
-  numWeeks: 20,
-  id: '11'
-  }
-  */
   addToDatabase("ideas", req.body);
   res.status(201).send(newIdea);
 });

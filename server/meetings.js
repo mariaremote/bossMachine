@@ -13,7 +13,6 @@ meetingsRouter.param("meetingId", getCorrectParam("meetingId", "meetings"));
 meetingsRouter.get("/", (_req, res) => {
   res.send(getAllFromDatabase("meetings"));
 });
-
 meetingsRouter.get("/:meetingId", (req, res) => {
   res.send(getFromDatabaseById("meetings", req.meetingId));
 });
